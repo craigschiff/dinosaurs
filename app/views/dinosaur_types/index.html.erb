@@ -1,0 +1,9 @@
+<h1>Dinosaur Types!</h1>
+
+<% @types.each do |type| %>
+
+<%= type.name %><br />
+<%= link_to "See Dinosaurs!", dinosaur_type_path(type) %>
+<br /><br />
+
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Edit a Dino!</h1>
+
+<% if flash[:alert] %>
+<%= flash[:alert] %>
+<% end %>
+
+
+<%= form_for @dino do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br />
+<%= f.label :weight %>
+<%= f.number_field :weight %><br />
+<%= f.label :badass_index %>
+<%= f.number_field :badass_index %><br />
+<%= "Who do you eat?:" %><br />
+<%= f.collection_check_boxes :prey_ids, Prey.all, :id, :name %>
+<br />
+<%= f.submit %>
+<br /><br />
+<% end %>
+
+<%= "Or Delete your Dino" %><br></br>
+<%= link_to "Delete", dinosaur_path(@dino), method: :delete, data: {confirm: "Why?"} %>

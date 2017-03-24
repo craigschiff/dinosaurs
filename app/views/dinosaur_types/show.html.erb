@@ -1,0 +1,13 @@
+<%= "Welcome to the best dinosaur category: #{@type.name}" %>
+<br /><br />
+<%= "Our Dinosaurs!" %>
+
+<% @type.dinosaurs.each do |dino| %>
+<label>Name: </label>
+<%= dino.name %><br />
+<label>Weight: </label>
+<%= dino.weight %><br />
+<label>Badass Index: </label>
+<%= dino.badass_index %><br />
+<%= link_to "More Details", dinosaur_path(dino) %>
+<% end %>

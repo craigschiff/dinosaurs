@@ -1,0 +1,16 @@
+<h1>Dinosaurs!</h1>
+
+<% @dinos.each do |dino| %>
+
+<label>Name: </label>
+<%= dino.name %><br />
+<label>Weight: </label>
+<%= dino.weight %><br />
+<label>Badass Index: </label>
+<%= dino.badass_index %><br />
+<label>Category: </label>
+<%= link_to dino.dinosaur_type.name, dinosaur_type_path(dino.dinosaur_type) %><br />
+<%= link_to "More Details", dinosaur_path(dino) %>
+<br /><br />
+
+<% end %>

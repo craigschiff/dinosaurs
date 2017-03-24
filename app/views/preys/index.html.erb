@@ -1,0 +1,12 @@
+<h1>Prey!</h1>
+
+<% @preys.each do |prey| %>
+
+<label>Name: </label>
+<%= prey.name %><br />
+<label>Weight: </label>
+<%= prey.weight %><br />
+<label>More Details: </label><br />
+<%= link_to prey.name.capitalize, prey_path(prey) %><br />
+<br /><br />
+<% end %>

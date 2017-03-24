@@ -1,0 +1,25 @@
+<h1>Create a Dino!</h1>
+
+<% if flash[:alert] %>
+<%= flash[:alert] %>
+<% end %>
+
+
+<%= form_for @dino do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br />
+<%= f.label :weight %>
+<%= f.number_field :weight %><br />
+<%= f.label :badass_index %>
+<%= f.number_field :badass_index %><br />
+<%= "Who do you eat?:" %><br />
+<%= f.collection_check_boxes :prey_ids, Prey.all, :id, :name %>
+<br />
+<%= "Choose from existing categories:" %><br />
+<%= f.collection_select :dinosaur_type_id, DinosaurType.all, :id, :name, include_blank: true %>
+<br /><br />
+<%= "Or, create a new category below!" %><br />
+<label>Category Name:</label>
+<%= text_field_tag :type %><br />
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Prey!</h1>
+
+<label>Name: </label>
+<%= @prey.name %><br />
+<label>Weight: </label>
+<%= @prey.weight %><br />
+<label>Predators: </label>
+<% @prey.dinosaurs.each do |dino| %>
+<%= link_to dino.name, dinosaur_path(dino) %><br />
+<% end %>
