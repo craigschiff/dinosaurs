@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  dinosaur_type: one
+  weight: 1
+  badass_index: 1
+
+two:
+  name: MyString
+  dinosaur_type: two
+  weight: 1
+  badass_index: 1

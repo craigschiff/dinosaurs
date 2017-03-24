@@ -1,0 +1,2 @@
+class DinosaurTypesController < ApplicationController
+end
